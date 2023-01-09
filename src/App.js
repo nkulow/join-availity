@@ -1,24 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import RegisterForm from "./components/RegisterForm";
+import { useForm } from 'react-hook-form';
+import { createAccount } from './services/register-service';
 
 function App() {
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
+  const onSubmit = (formData) => {
+    createAccount(formData);
+    reset();
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RegisterForm register={register} handleSubmit={handleSubmit} onSubmit={onSubmit} errors={errors} />
   );
 }
 

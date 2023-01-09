@@ -1,0 +1,27 @@
+.form {
+    margin: auto;
+    width: 50%;
+    border: 3px solid orange;
+    padding: 20px;
+    margin-top: 40px;
+
+    &__fields {
+        .error {
+            border: 1px solid red;
+		    &:focus {
+                border-color: red;
+			    outline: none;
+                box-shadow: none;
+		    }
+        }
+    }
+
+    &__submit-btn {
+        margin: 15px;
+        text-align: center;
+    }
+
+    h1 {
+        text-align: center;
+    }
+}
