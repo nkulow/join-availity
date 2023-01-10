@@ -23,13 +23,13 @@ describe('RegisterForm', () => {
         expect(screen.getByText('Register')).toBeInTheDocument();
     });
 
-    it('should register register all fields', () => {
+    it('should register all fields in the form', () => {
         jest.clearAllMocks();
         registerFormComponent();
         expect(register).toHaveBeenCalledTimes(6);
     });
 
-    it('should submit form when submitting', () => {
+    it('should call handleSubmit when submitting form', () => {
         jest.clearAllMocks();
         registerFormComponent();
         fireEvent.click(screen.getByRole('submit'));

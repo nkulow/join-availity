@@ -1,4 +1,12 @@
-// createAccount API request
 export async function createAccount(formData) {
-    alert(`Request Body:\n ${JSON.stringify(formData, null, 2)}`);
+    try {
+        if (formData) {
+            alert(`Success:\n ${JSON.stringify(formData, null, 2)}`);
+        } else {
+            alert('Unable to create account.');
+        }
+    }
+    catch(e) {
+        alert('Error:', e);
+    }
 }
